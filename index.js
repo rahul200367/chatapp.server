@@ -3,13 +3,15 @@ const app = express();
 const cors = require('cors');
 const http = require('http');
 const {Server} = require('socket.io');
-app.use(cors());
+//app.use(cors());
 app.use(express.json());
 const server = http.createServer(app);
 const io = new Server( server,{
     cors:{
         origin:'https://radiant-lebkuchen-a145f4.netlify.app/',
         methods:['GET','POST'],
+        credentials: true, // enable credentials (cookies, authorization headers, etc.)
+        optionsSuccessStatus: 204,
     }
 });
 io.on('connection' ,(socket)=>{
