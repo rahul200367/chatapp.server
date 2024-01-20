@@ -8,7 +8,7 @@ app.use(express.json());
 const server = http.createServer(app);
 const io = new Server( server,{
     cors:{
-       origin:'https://65abbf4bf3342f00084d3d90--radiant-lebkuchen-a145f4.netlify.app',
+       origin:'https://radiant-lebkuchen-a145f4.netlify.app',
         methods:['GET','POST'],
         credentials: true, 
         optionsSuccessStatus: 204,
